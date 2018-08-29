@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: rpi-rasbian
+      - image: resin/rpi-raspbian
     steps:
       - checkout
       - run:
