@@ -8,9 +8,16 @@ jobs:
       - run:
           name: Greeting
           command: echo Hello, world.
-      - run:
-          name: Local PortForward
-          command: ssh -o "StrictHostKeyChecking no" circleci@52.31.45.193 -L 5601:localhost:5601 &&
+#       - run:
+#           name: Local PortForward
+#           command: ssh -o "StrictHostKeyChecking no" circleci@52.31.45.193 -L 5601:localhost:5601
+
+       - run:
+             name: Execute Deployment Script
+             command: |
+               ssh -o "StrictHostKeyChecking no" root@52.31.45.193 -L 5601:localhost:5601 <<'ENDSSH'
+      
+      
       - run:
           name: Kibana test
           command: curl localhost:5601      
