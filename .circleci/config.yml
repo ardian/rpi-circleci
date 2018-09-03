@@ -10,7 +10,7 @@ jobs:
           command: echo Hello, world.
       - run:
           name: Local PortForward
-          command: ssh -o "StrictHostKeyChecking no" circleci@52.31.45.193 -L 5601:localhost:5601
+          command: ssh -o "StrictHostKeyChecking no" circleci@52.31.45.193 -L 5601:localhost:5601 &&
       - run:
           name: Kibana test
           command: curl localhost:5601      
