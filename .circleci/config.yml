@@ -17,3 +17,12 @@ jobs:
       - run:
           name: Kibana test
           command: curl localhost:5601
+
+      - run:
+          name: rsync
+          command: |
+            if [ "${CIRCLE_BRANCH}" = "master" ]; then
+              rsync -avce ssh .bashrc circleci@52.31.45.193:~/test/
+            else
+              echo "Not master branch, dry run only"
+            fi
