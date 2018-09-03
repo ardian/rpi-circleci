@@ -22,7 +22,7 @@ jobs:
           name: rsync
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              rsync -avce ssh .bashrc circleci@52.31.45.193:~/test/
+              rsync -avce ssh . circleci@52.31.45.193:~/test/
             else
               echo "Not master branch, dry run only"
             fi
