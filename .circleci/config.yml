@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Execute Deployment Script
           command: |
-             ssh -o "StrictHostKeyChecking no" root@52.31.45.193 -L 5601:localhost:5601 <<'ENDSSH'
+             ssh -o "StrictHostKeyChecking no" circleci@52.31.45.193 -L 5601:localhost:5601 <<'ENDSSH'
       
       
       - run:
