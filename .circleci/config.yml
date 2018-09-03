@@ -9,5 +9,8 @@ jobs:
           name: Greeting
           command: echo Hello, world.
       - run:
-          name: Print the Current Time
-          command: date
+          name: Local PortForward
+          command: ssh circleci@52.31.45.193 -L 5601:localhost:5601
+      - run:
+          name: Kibana test
+          command: curl localhost:5601      
